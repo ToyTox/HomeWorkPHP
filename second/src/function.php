@@ -13,8 +13,6 @@ function tasc1(array $arr, $rem = true)
     return $all;
 }
 
-echo tasc1(['Мороз', 'и', 'солнце', 'день', 'чудесный'], true) . '<br>';
-
 //Задание 2
 function tasc2(...$args)
 {
@@ -43,8 +41,6 @@ function tasc2(...$args)
     return $result;
 }
 
-echo tasc2('+', 3, 9, 8, 1.1) . '<br>';
-
 //Задание 3
 function tasc3($rows, $cols)
 {
@@ -63,54 +59,33 @@ function tasc3($rows, $cols)
     }
 }
 
-echo tasc3(rand(1,10), rand(1,10)) . '<br>';
-
-function tasc4 ([])
-{
-
-}
-function tasc5 ([])
-{
-
-}
-function tasc6 ([])
-{
-
-}
-function tasc7 ([])
-{
-
-}
-function tasc8 ([])
-{
-
-}
-function tasc9 ([])
-{
-
-}
-function tasc10 ([])
-{
-
-}
-
 //Задание 4
-echo date('d.m.Y H:i') . '<br>';
 $time = '24.02.2016 00:00:00';
-echo strtotime($time) . '<br>';
+echo date('d.m.Y H:i') . '<br>';
+function task4($time)
+{
+    return strtotime($time) . '<br>';
+}
 
 //Задание 5
 $poem = 'Карл у Клары украл Корралы';
-echo mb_strtolower($poem) . '<br>';
+function task5($poem)
+{
+    return mb_strtolower($poem) . '<br>';
+}
+
 $str = 'Две бутылки лимонада';
-echo str_replace('Две', 'Три', $str) . '<br>';
+function task6($str)
+{
+    return str_replace('Две', 'Три', $str) . '<br>';
+}
 
 //Задание 6
 $test = "Hello again!";
 file_put_contents('test.txt', $test);
 
-function printFileContents(string $fileName)
+function task7(string $fileName)
 {
-    echo file_get_contents($fileName);
+    return file_get_contents($fileName);
 }
-printFileContents('test.txt');
+

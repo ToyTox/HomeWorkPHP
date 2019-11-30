@@ -1,15 +1,15 @@
 <?php
+require('src/function.php');
+
 CONST testConstanta = 'asd';
 $user_name = "Igor";
-function show_something(){ RETURN 'SOMETHING';}
-if (1==1) echo 'hi';
 
-const TESTCONSTANTA = 'asd';
+if (1 == 1) echo 'hi';
+
+const TEST_CONSTANTA = 'asd';
 $userName = "Igor";
-function showSomething ()
-{
-    return 'somthing';
-}
-if (1==1) {
+echo showSomething();
+
+if (1 == 1) {
     echo 'hi';
 }
