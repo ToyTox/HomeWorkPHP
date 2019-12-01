@@ -1,42 +1,43 @@
 <?php
 
 //Задание 1
-function tasc1(array $arr, $rem = true)
+function tasc1(array $arr, $rem)
 {
     foreach ($arr as $value) {
         if ($rem) {
             $all = implode(' ', $arr);
+            return $all;
         } else {
             echo $value . '<p>';
         }
     }
-    return $all;
 }
 
 //Задание 2
 function tasc2(...$args)
 {
-    $operation = $args[0];
+    $operation = array_shift($args);
+    $expression = implode($operation, $args);
     $result = 0;
 
-    if ($operation == '+') {
-        for ($i = 1; $i < sizeof($args); $i++) {
-            $result += $args[$i];
-        }
+    if ($operation == '-') {
+        for ($i = 0; $i < sizeof($args); $i++)
+            $result -= $args[$i];
     } elseif ($operation == '*') {
         $result = 1;
-        for ($i = 1; $i < sizeof($args); $i++) {
+        for ($i = 0; $i < sizeof($args); $i++) {
             $result *= $args[$i];
         }
-    } elseif ($operation == '-') {
-        for ($i = 1; $i < sizeof($args); $i++) {
-            $result -= $args[$i];
-        }
-    } else {
+    } elseif ($operation == '/') {
         $result = 1;
-        for ($i = 1; $i < sizeof($args); $i++) {
+        for ($i = 0; $i < sizeof($args); $i++) {
             $result /= $args[$i];
         }
+    } else {
+        for ($i = 0; $i < sizeof($args); $i++) {
+            $result += $args[$i];
+        }
+        $result = $expression . ' = ' . array_sum($args);
     }
     return $result;
 }
