@@ -2,13 +2,20 @@
 
 namespace Tariffs;
 require_once 'AbstractClass.php';
+require_once 'classes\GPS.php';
+require_once 'classes\AddDriver.php';
 
 class DayTariff extends Tariff
 {
-    public function __construct($pricePerKm, $pricePerDay)
+    use GPS;
+    use AddDriver;
+
+    public function __construct($pricePerKm, $pricePerDay, $GPS = false, $secondDriver = false)
     {
         $this->pricePerKm = $pricePerKm;
         $this->pricePerMin = $pricePerDay / 1440;
+        $this->GPS = $GPS;
+        $this->secondDriver = $secondDriver;
     }
 
     public function calcPrice($age, $timeMin, $distKm)

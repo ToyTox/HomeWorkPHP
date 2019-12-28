@@ -7,6 +7,8 @@ abstract class Tariff implements IPrice
 {
     protected $pricePerKm;
     protected $pricePerMin;
+    public $GPS;
+    public $secondDriver;
 
 
     public function calcPrice($age, $timeMin, $distKm)
@@ -29,10 +31,3 @@ abstract class Tariff implements IPrice
 
 }
 
-trait GPS
-{
-    public function calcPriceGPS($age, $timeMin, $distKm)
-    {
-        return parent::calcPrice($age, $timeMin, $distKm) + 1000;
-    }
-}
